@@ -13,7 +13,12 @@ const app = express();
 app.use(express.json());
 
 //
-app.use(cors({ "https://real-estate-web-ozog.onrender.com", credentials: true }));
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+  })
+);
 
 //this is used perform CRUD operation in cookies
 //access them.....
