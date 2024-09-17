@@ -38,6 +38,4 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen(4000, () => {
-  console.log("run");
-});
+io.listen(process.env.PORT || 4000);
