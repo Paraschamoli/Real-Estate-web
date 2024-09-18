@@ -42,6 +42,13 @@ const userSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: "SavePost",
       },
+    ],
+    chats:[
+      {
+        
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Chat",
+      }
     ]
   },
   { timestamps: true }
