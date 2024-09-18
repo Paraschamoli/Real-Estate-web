@@ -1,10 +1,10 @@
 import { create } from "zustand";
-import apiRequest from "./apiRequest";
+import apiRequest from "./apiRequest.js";
 
 export const useNotificationStore = create((set) => ({
   number: 0,
   fetch: async () => {
-    const res = await apiRequest("/user/notification");
+    const res = await apiRequest.get("/user/notification");
     set({ number: res.data });
   },
   decrease: () => {
