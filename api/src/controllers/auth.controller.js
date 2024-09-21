@@ -88,7 +88,7 @@ export const login = asyncHandler(async (req, res) => {
   );
   const options = {
     httpOnly: true,
-    secure: true,
+   // secure: true,
   };
 
   return res
@@ -111,7 +111,7 @@ export const logout = async (req, res) => {
   );
   const options = {
     httpOnly: true,
-     secure: true,
+    // secure: true,
   };
   return res
     .status(200)
@@ -162,7 +162,7 @@ export const refreshAccessToken = asyncHandler(async (req, res) => {
 
     const options = {
       httpOnly: true,
-       secure: true,
+       //secure: true,
     };
 
     const { accessToken } = await generateAccessToken(user._id);
