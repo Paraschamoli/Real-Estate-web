@@ -23,7 +23,9 @@ app.use(
 //this is used perform CRUD operation in cookies
 //access them.....
 app.use(cookieParser());
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 
 app.use("/api/posts", postRoute);
 app.use("/api/auth", authRoute);

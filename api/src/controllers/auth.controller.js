@@ -88,7 +88,8 @@ export const login = asyncHandler(async (req, res) => {
   );
   const options = {
     httpOnly: true,
-   // secure: true,
+    secure: true, // HTTPS only in production
+    sameSite: 'None', // Required for cross-origin requests
   };
 
   return res
@@ -111,7 +112,7 @@ export const logout = async (req, res) => {
   );
   const options = {
     httpOnly: true,
-    // secure: true,
+     secure: true,
   };
   return res
     .status(200)

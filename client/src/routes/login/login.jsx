@@ -22,7 +22,7 @@ function Login() {
       const res = await apiRequest.post("/auth/login", {
         username,
         password,
-      });
+      },{ withCredentials: true });
       // console.log(res);
 
       // console.log(res.data);
