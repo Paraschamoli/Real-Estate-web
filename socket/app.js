@@ -2,8 +2,8 @@ import { Server } from "socket.io";
 
 const io = new Server({
   cors: {
-    // origin: "https://real-estate-web-ozog.onrender.com",
-    origin: "http://localhost:5173",
+     origin: "https://boisterous-sunshine-e381f0.netlify.app",
+    // origin: "http://localhost:5173",
   },
 });
 
