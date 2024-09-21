@@ -12,6 +12,7 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
 
     // Check if token is provided
     if (!token) {
+      console.log("No token provided");
       throw new ApiError(401, "Unauthorized request: no token provided");
     }
 
@@ -25,15 +26,20 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
 
     // If the user does not exist, throw an error
     if (!user) {
+      console.log("Invalid token: user not found");
       throw new ApiError(401, "Unauthorized request: invalid access token");
     }
 
     // Attach the user to the request object
     req.user = user;
+    console.log("User authenticated:", user.username);
 
     // Proceed to the next middleware
     next();
   } catch (error) {
+    // Log error for debugging
+    console.error("JWT verification error:", error);
+
     // Handle JWT-specific errors (e.g., token expiration)
     if (error.name === "TokenExpiredError") {
       throw new ApiError(401, "Unauthorized request: token has expired");
